@@ -3,6 +3,8 @@ package com.ahmedshaban.ecomm.entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -42,6 +44,14 @@ public class UserEntity {
     @Column(name = "user_status")
     @Basic(optional = false)
     private String userStatus;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinTable(
+            name = "user_addresses",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "address_id")
+    )
+    private List<AddressEntity> addresses = new ArrayList<>();
 
     public String getUsername() {
         return username;
