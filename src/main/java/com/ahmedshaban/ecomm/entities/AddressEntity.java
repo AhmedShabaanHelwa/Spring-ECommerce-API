@@ -44,63 +44,71 @@ public class AddressEntity {
         return id;
     }
 
-    public void setId(UUID id) {
+    public AddressEntity setId(UUID id) {
         this.id = id;
+        return this;
     }
 
     public String getNumber() {
         return number;
     }
 
-    public void setNumber(String number) {
+    public AddressEntity setNumber(String number) {
         this.number = number;
+        return this;
     }
 
     public String getResidency() {
         return residency;
     }
 
-    public void setResidency(String residency) {
+    public AddressEntity setResidency(String residency) {
         this.residency = residency;
+        return this;
     }
 
     public String getStreet() {
         return street;
     }
 
-    public void setStreet(String street) {
+    public AddressEntity setStreet(String street) {
         this.street = street;
+        return this;
     }
 
     public String getCity() {
         return city;
     }
 
-    public void setCity(String city) {
+    public AddressEntity setCity(String city) {
         this.city = city;
+        return this;
     }
 
     public String getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public AddressEntity setState(String state) {
         this.state = state;
+        return this;
     }
 
     public String getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
+    public AddressEntity setCountry(String country) {
         this.country = country;
+        return this;
     }
 
     public String getPincode() {
         return pincode;
     }
 
-    public void setPincode(String pincode) {
+    public AddressEntity setPincode(String pincode) {
         this.pincode = pincode;
+        return this;
     }
 }

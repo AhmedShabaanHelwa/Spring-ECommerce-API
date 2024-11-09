@@ -57,8 +57,9 @@ public class UserEntity {
         return username;
     }
 
-    public void setUsername(String username) {
+    public UserEntity setUsername(String username) {
         this.username = username;
+        return this;
     }
 
     public String getPassword() {
@@ -73,39 +74,53 @@ public class UserEntity {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public UserEntity setFirstName(String firstName) {
         this.firstName = firstName;
+        return this;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public UserEntity setLastName(String lastName) {
         this.lastName = lastName;
+        return this;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public UserEntity setEmail(String email) {
         this.email = email;
+        return this;
     }
 
     public String getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public UserEntity setPhone(String phone) {
         this.phone = phone;
+        return this;
     }
 
     public String getUserStatus() {
         return userStatus;
     }
 
-    public void setUserStatus(String userStatus) {
+    public UserEntity setUserStatus(String userStatus) {
         this.userStatus = userStatus;
+        return this;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public UserEntity setId(UUID id) {
+        this.id = id;
+        return this;
     }
 }
