@@ -1,6 +1,6 @@
 CREATE SCHEMA IF NOT EXISTS ecomm;
 
-CREATE TABLE IF NOT EXISTS ecomm."user" (
+CREATE TABLE IF NOT EXISTS ecomm.customer (
     id              uuid NOT NULL DEFAULT random_uuid(),
     username        varchar(16),
     password        varchar(40),
@@ -24,16 +24,16 @@ create TABLE IF NOT EXISTS ecomm.address (
     PRIMARY KEY(id)
 );
 
-create TABLE IF NOT EXISTS ecomm.user_address (
-    user_id         uuid NOT NULL DEFAULT random_uuid(),
+create TABLE IF NOT EXISTS ecomm.customer_address (
+  customer_id         uuid NOT NULL DEFAULT random_uuid(),
     address_id      uuid NOT NULL,
-    FOREIGN KEY (user_id)
-        REFERENCES ecomm."user"(id),
+    FOREIGN KEY (customer_id)
+        REFERENCES ecomm.customer(id),
     FOREIGN KEY(address_id)
         REFERENCES ecomm.address(id)
 );
 
-insert into ecomm."user" (id, username, password, first_name, last_name, email, phone, user_status) values('a1b9b31d-e73c-4112-af7c-b68530f38222', 'test', 'pwd', 'Test', 'User', 'test@user.com', '234234234', 'ACTIVE');
-insert into ecomm."user" (id, username, password, first_name, last_name, email, phone, user_status) values('a1b9b31d-e73c-4112-af7c-b68530f38223', 'test', 'pwd', 'Test2', 'User2', 'test2@user.com', '234234234', 'ACTIVE');
+insert into ecomm.customer (id, username, password, first_name, last_name, email, phone, user_status) values('a1b9b31d-e73c-4112-af7c-b68530f38222', 'test', 'pwd', 'Test', 'User', 'test@user.com', '234234234', 'ACTIVE');
+insert into ecomm.customer (id, username, password, first_name, last_name, email, phone, user_status) values('a1b9b31d-e73c-4112-af7c-b68530f38223', 'test', 'pwd', 'Test2', 'User2', 'test2@user.com', '234234234', 'ACTIVE');
 INSERT INTO ecomm.address VALUES ('a731fda1-aaad-42ea-bdbc-a27eeebe2cc0', '9I-999', 'Fraser Suites Le Claridge', 'Champs-Elysees', 'Paris', 'Île-de-France', 'France', '75008');
-insert into ecomm.user_address values ('a1b9b31d-e73c-4112-af7c-b68530f38222', 'a731fda1-aaad-42ea-bdbc-a27eeebe2cc0');
+insert into ecomm.customer_address values ('a1b9b31d-e73c-4112-af7c-b68530f38222', 'a731fda1-aaad-42ea-bdbc-a27eeebe2cc0');

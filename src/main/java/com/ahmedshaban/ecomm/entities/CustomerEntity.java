@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(name = "user")
-public class UserEntity {
+@Table(name = "customer")
+public class CustomerEntity {
 
     @Id
     @GeneratedValue
@@ -48,7 +48,7 @@ public class UserEntity {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(
             name = "user_addresses",
-            joinColumns = @JoinColumn(name = "user_id"),
+            joinColumns = @JoinColumn(name = "customer_id"),
             inverseJoinColumns = @JoinColumn(name = "address_id")
     )
     private List<AddressEntity> addresses = new ArrayList<>();
@@ -57,7 +57,7 @@ public class UserEntity {
         return username;
     }
 
-    public UserEntity setUsername(String username) {
+    public CustomerEntity setUsername(String username) {
         this.username = username;
         return this;
     }
@@ -74,7 +74,7 @@ public class UserEntity {
         return firstName;
     }
 
-    public UserEntity setFirstName(String firstName) {
+    public CustomerEntity setFirstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
@@ -83,7 +83,7 @@ public class UserEntity {
         return lastName;
     }
 
-    public UserEntity setLastName(String lastName) {
+    public CustomerEntity setLastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
@@ -92,7 +92,7 @@ public class UserEntity {
         return email;
     }
 
-    public UserEntity setEmail(String email) {
+    public CustomerEntity setEmail(String email) {
         this.email = email;
         return this;
     }
@@ -101,7 +101,7 @@ public class UserEntity {
         return phone;
     }
 
-    public UserEntity setPhone(String phone) {
+    public CustomerEntity setPhone(String phone) {
         this.phone = phone;
         return this;
     }
@@ -110,7 +110,7 @@ public class UserEntity {
         return userStatus;
     }
 
-    public UserEntity setUserStatus(String userStatus) {
+    public CustomerEntity setUserStatus(String userStatus) {
         this.userStatus = userStatus;
         return this;
     }
@@ -119,7 +119,7 @@ public class UserEntity {
         return id;
     }
 
-    public UserEntity setId(UUID id) {
+    public CustomerEntity setId(UUID id) {
         this.id = id;
         return this;
     }
