@@ -47,7 +47,7 @@ public class CustomerEntity {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(
-            name = "user_addresses",
+            name = "customer_address",
             joinColumns = @JoinColumn(name = "customer_id"),
             inverseJoinColumns = @JoinColumn(name = "address_id")
     )
@@ -121,6 +121,15 @@ public class CustomerEntity {
 
     public CustomerEntity setId(UUID id) {
         this.id = id;
+        return this;
+    }
+
+    public List<AddressEntity> getAddresses() {
+        return addresses;
+    }
+
+    public CustomerEntity setAddresses(List<AddressEntity> addresses) {
+        this.addresses = addresses;
         return this;
     }
 }
