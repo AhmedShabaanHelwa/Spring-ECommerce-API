@@ -19,9 +19,7 @@ public class CustomersController{
     }
 
 
-    @GetMapping(
-        value = "/api/v1/customers"
-    )
+    @GetMapping(value = "/api/v1/customers")
     public ResponseEntity<Iterable<CustomerEntity>> getAllCustomers() {
 
         return ok(customerService.getAllCustomers());
