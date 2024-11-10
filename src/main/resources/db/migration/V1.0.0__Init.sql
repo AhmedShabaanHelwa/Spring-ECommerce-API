@@ -25,8 +25,8 @@ create TABLE IF NOT EXISTS ecomm.address (
 );
 
 create TABLE IF NOT EXISTS ecomm.customer_address (
-  customer_id         uuid NOT NULL DEFAULT random_uuid(),
-    address_id      uuid NOT NULL,
+    customer_id         uuid NOT NULL DEFAULT random_uuid(),
+    address_id          uuid NOT NULL,
     FOREIGN KEY (customer_id)
         REFERENCES ecomm.customer(id),
     FOREIGN KEY(address_id)
